@@ -1,0 +1,16 @@
+[ User ]
+   ↓
+[ Frontend UI ]
+   ↓
+[ Flask Backend ]
+   ↓
+[ Gemma 4 (Ollama Local) ]
+   ↓
+[ Response Engine ]
+   ↓
+[ Output to User ]
+
+Optional:
+[ Image Input ] → [ Image Handler ]
+[ Alert Button ] → [ Alert Service ]
+[ Maps API ] → [ Location Data ]

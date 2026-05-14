@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Emergency Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🚨 Emergency AI</h1>
+        <p>Your smart emergency assistant</p>
+    </div>
+
+    <!-- INPUT CARD -->
+    <div class="card">
+        <textarea 
+            id="userInput" 
+            placeholder="Describe your emergency..."
+        ></textarea>
+
+        <div class="buttons">
+            <button class="voice-btn" onclick="startVoice()">🎤</button>
+            <button class="help-btn" onclick="sendData()" id="helpBtn">
+                Get Help
+            </button>
+        </div>
+    </div>
+
+    <!-- POPUP -->
+    <div id="popup">✅ Request Sent!</div>
+
+    <!-- RESPONSE CARD -->
+    <div class="response-card">
+        <h3>AI Response</h3>
+        <div id="responseBox">Your help response will appear here...</div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
