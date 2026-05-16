@@ -1,143 +1,200 @@
-🚨 AI Emergency Response Assistant
+# 🚨 AI Emergency Response Assistant
 
-A local-first AI-powered emergency assistant that provides instant, actionable responses during critical situations — even in low-connectivity environments.
+**(Offline + Real-Time Support) Powered by Gemma 4 for Global Resilience and Life-Saving Decisions.**
 
-Built for the Gemma 4 Good Hackathon (Ollama Track), this system combines:
+A local-first AI-powered emergency assistant providing instant, actionable responses during critical situations—even in low-connectivity environments.
 
-⚡ Rule-based intelligence (fast, reliable)
-🤖 Local LLM (TinyLlama via Ollama)
-🎤 Voice input + 🔊 voice output
-📍 Location awareness (browser-based)
-🌍 Problem
+> **Built for the Gemma 4 Good Hackathon (Ollama Track)**
+
+---
+
+## 🧩 Features
+
+- ⚡ **Rule-based intelligence** (fast, reliable)
+- 🤖 **Local LLM** (TinyLlama via Ollama)
+- 🎤 **Voice input** + 🔊 **voice output**
+- 📍 **Location awareness** (browser-based)
+- ✅ **Short, clear actions** (1–2 lines per emergency)
+- ☎️ **Emergency helpline numbers** (India)
+- 🚨 **Instant response** (no delay, no confusion)
+- 💻 **Runs locally** using Ollama (privacy + offline)
+
+---
+
+## 🌍 Problem
 
 During emergencies, people often:
 
-Panic and don’t know what to do
-Waste time reading long AI responses
-Lack access to reliable internet
-💡 Solution
+- Panic and don’t know what to do
+- Waste time reading long AI responses
+- Lack access to reliable internet
 
-This assistant gives:
+---
 
-✅ Short, clear actions (1–2 lines)
-☎️ Emergency helpline numbers (India)
-🚨 Instant response (no delay, no confusion)
-💻 Runs locally using Ollama (privacy + offline capability)
-🧠 Architecture (Simple View)
+## 💡 Solution
+
+This assistant provides:
+
+- Short, clear actions (1–2 lines)
+- Emergency contact numbers
+- Instant, privacy-first responses (no external servers)
+
+---
+
+## 🧠 Architecture (Simple View)
+
+```
 User (Voice/Text)
-        ↓
+        │
+        ▼
 Frontend (HTML + JS)
-        ↓
-Flask Backend API (/chat)
-        ↓
- ┌───────────────────────────┐
- │   Hybrid Intelligence     │
- │                           │
- │  1. Rule-Based System     │ → Fast fixed responses
- │  2. Ollama (TinyLlama)    │ → Smart fallback
- └───────────────────────────┘
-        ↓
+        │
+        ▼
+Backend (Flask API /chat)
+        │
+        ▼
+Hybrid Intelligence Layer
+   ├─ Rule-Based System (fast)
+   └─ Ollama (TinyLlama) (smart fallback)
+        │
+        ▼
 Short Emergency Response
-📁 Project Structure
+```
+
+---
+
+## 📁 Project Structure
+
+```
 AI-Emergency-Response-Assistant/
-│
 ├── backend/
 │   ├── app.py              # Flask API
-│   ├── alert_service.py    # Rule-based emergency logic
-│
+│   └── alert_service.py    # Rule-based emergency logic
 ├── frontend/
 │   ├── index.html          # UI
 │   ├── style.css           # Styling
-│   ├── app.js              # Voice + API logic
-│
+│   └── app.js              # Voice + API logic
 ├── models/
 │   └── yolov8n.pt          # (optional future vision model)
-│
 ├── .venv/                  # Virtual environment
 ├── README.md
-⚙️ Installation (Step-by-Step)
-1. Clone Repository
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd AI-Emergency-Response-Assistant
-2. Create Virtual Environment
-python -m venv .venv
-3. Activate Environment (Windows)
-.\.venv\Scripts\Activate.ps1
-4. Install Dependencies
-pip install flask flask-cors requests
-5. Install & Run Ollama Model
+```
 
-Download Ollama:
-👉 https://ollama.com
+---
 
-Then run:
+## ⚙️ Installation (Step-by-Step)
 
-ollama run tinyllama
-6. Start Backend Server
-cd backend
-python app.py
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/YogeshK34/AI-Emergency-Response-Assistant.git
+   cd AI-Emergency-Response-Assistant
+   ```
 
-Runs on:
+2. **Create Virtual Environment**
+   ```bash
+   python -m venv .venv
+   ```
 
-http://127.0.0.1:5000
-7. Run Frontend
+3. **Activate Environment (Windows)**
+   ```bash
+   .\.venv\Scripts\Activate.ps1
+   ```
 
-Open:
+4. **Install Dependencies**
+   ```bash
+   pip install flask flask-cors requests
+   ```
 
-frontend/index.html
+5. **Install & Run Ollama Model**
 
-OR use Live Server:
+   - Download Ollama: [https://ollama.com](https://ollama.com)
+   - Run model:
+     ```bash
+     ollama run tinyllama
+     ```
 
-http://127.0.0.1:5500
-🚀 Features
-🎤 Voice-to-text emergency input
-🔊 AI voice response
-📍 Location detection (browser)
-⚡ Instant rule-based emergency replies
-🤖 Local AI fallback (TinyLlama via Ollama)
-🔐 Privacy-first (runs fully local)
-🧪 Example Output
+6. **Start Backend Server**
+   ```bash
+   cd backend
+   python app.py
+   ```
+   Runs on: `http://127.0.0.1:5000`
 
-Input:
+7. **Run Frontend**
 
+   - Open `frontend/index.html` in your browser  
+   - OR use Live Server: `http://127.0.0.1:5500`
+
+---
+
+## 🧪 Example Output
+
+**Input:**
+```
 Fire in my building
-
-Output:
-
+```
+**Output:**
+```
 🚒 Fire Emergency: Call 101 immediately. Evacuate using stairs.
-🔥 Hybrid Intelligence Logic
-Layer	Purpose
-Rule-Based	Instant, accurate emergency actions
-Ollama AI	Handles unknown/custom situations
-Prompt Control	Forces short, useful responses
-🌐 Why Local AI (Ollama)?
-No internet dependency
-Faster response
-Better privacy
-Perfect for disaster scenarios
-⚠️ Limitations
-Requires Ollama installed locally
-Browser permissions needed (mic/location)
-Not yet deployed (local-only)
-🌟 Future Improvements
-📱 Mobile app (Flutter / React Native)
-🗺️ Live maps + nearest hospital/police
-📷 Image-based emergency detection (YOLO)
-🌐 Multi-language support
-☁️ Cloud deployment (optional fallback)
-🏆 Hackathon Focus
+```
+
+---
+
+## 🔥 Hybrid Intelligence Logic
+
+| Layer            | Purpose                               |
+|------------------|---------------------------------------|
+| Rule-Based       | Instant, accurate emergency actions   |
+| Ollama AI        | Handles unknown/custom situations     |
+| Prompt Control   | Forces short, useful responses        |
+
+---
+
+## 🌐 Why Local AI (Ollama)?
+
+- No internet dependency
+- Faster response
+- Better privacy
+- Perfect for disaster scenarios
+
+---
+
+## ⚠️ Limitations
+
+- Requires Ollama installed locally
+- Needs browser permissions (mic/location)
+- Not yet deployed (local-only)
+
+---
+
+## 🌟 Future Improvements
+
+- 📱 Mobile app (Flutter / React Native)
+- 🗺️ Live maps + nearest hospital/police
+- 📷 Image-based emergency detection (YOLO)
+- 🌐 Multi-language support
+- ☁️ Optional cloud deployment fallback
+
+---
+
+## 🏆 Hackathon Focus
 
 This project targets:
 
-🌍 Global Resilience
-🔐 Safety & Trust
-💻 Ollama Local AI Track
-👩‍💻 Author
+- 🌍 Global Resilience
+- 🔐 Safety & Trust
+- 💻 Ollama Local AI Track
 
-Ruhi Khan
-MSc Data Science & Big Data Analytics
+---
+
+## 👩‍💻 Author
+
+**Ruhi Khan**  
+MSc Data Science & Big Data Analytics  
 Network Engineer | AI Enthusiast
 
-📜 License
+---
+
+## 📜 License
 
 This project is open-source and free to use.
